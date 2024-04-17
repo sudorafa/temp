@@ -1,0 +1,46 @@
+<div class="display">
+  <div class="item-row item-top">
+    <strong>{{ expense().name }}</strong>
+    <div class="actions">
+      <button mat-icon-button class="action-btn edit-btn" (click)="edit.emit()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="action-btn archive-btn"
+        (click)="remove.emit()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="item-row">
+    <span>Valor:</span>
+    <strong>{{ expense().formattedValue }}</strong>
+  </div>
+  <div class="item-row">
+    <span>Empresa:</span>
+    @if (expense().company?.name) {
+      <strong>{{ expense().company?.name }}</strong>
+    } @else {
+      <strong>-</strong>
+    }
+  </div>
+  @if (expense().category?.name) {
+    <div class="item-row">
+      <span>Categoria:</span>
+      <strong>{{ expense().category?.name }}</strong>
+    </div>
+  }
+  <div class="item-row">
+    <span>Data de pagamento:</span>
+    <strong>{{ expense().paymentDate | date: "dd/MM/YYYY" }}</strong>
+  </div>
+  <div class="item-row">
+    <span>Data de referência:</span>
+    <strong>{{ expense().referenceDate | date: "dd/MM/YYYY" }}</strong>
+  </div>
+  <div class="item-row">
+    <p class="description">{{ expense().description }}</p>
+  </div>
+</div>

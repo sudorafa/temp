@@ -1,0 +1,33 @@
+<section class="filters">
+  <mat-icon>search</mat-icon>
+  <span class="filter-label"> Filtrar por ano </span>
+  <mat-form-field appearance="fill">
+    <mat-label>Ano selecionado</mat-label>
+    <mat-select [value]="2024">
+      @for (year of years(); track $index) {
+        <mat-option [value]="year" (click)="changeYear.emit(year)">
+          {{ year }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</section>
+
+<!--
+gráfico indicativo de quanto ainda há disponível de faturamento para emitir uma Nota Fiscal sem que haja desenquadramento como MEI
+gráficos com o valor de NF gerado, mês a mês
+gráficos com o valor de despesas mês a mês
+gráficos com balanço simples, mostrando receitas - despesas mês a mês
+gráficos com as despesas por categorias
+-->
+
+<section class="charts">
+  <app-chart-default
+    class="month-chart"
+    icon="bar_chart"
+    title="Receitas e Despesas (mês a mês)"
+    divId="monthsChartSeries"
+    [chartData]="dashboard().invoicesByMonth"
+    [series]="monthsChartSeries"
+  ></app-chart-default>
+</section>

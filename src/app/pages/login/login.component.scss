@@ -1,0 +1,110 @@
+@mixin btn-color($color) {
+  border-color: $color;
+  color: $color;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/assets/images/login-bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form {
+  background: var(--light-color);
+  border-radius: 12px;
+  width: 290px;
+  padding: 1rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 3px 20px;
+
+  .mat-mdc-form-field {
+    width: 90%;
+  }
+
+  .btn {
+    &__login {
+      background-color: var(--secondary-color);
+      color: var(--light-color);
+      text-transform: uppercase;
+      height: 45px;
+      width: 150px;
+      margin: 1rem 0;
+
+      mat-icon {
+        color: var(--light-color);
+      }
+
+      &.mat-mdc-button-disabled {
+        background-color: var(--grey-color);
+        color: var(--light-color);
+      }
+    }
+
+    &__email {
+      @include btn-color(var(--accent-color));
+    }
+
+    &__facebook {
+      @include btn-color(#4267b2);
+    }
+
+    &__google {
+      @include btn-color(#db4437);
+    }
+  }
+}
+
+mat-icon {
+  color: var(--grey-color);
+}
+
+.has-register-title {
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--grey-color);
+}
+
+.register-title {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--grey-color);
+  margin: 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 65px;
+    background-color: var(--grey-color);
+    left: 155px;
+    top: 17px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 65px;
+    background-color: var(--grey-color);
+    left: -76px;
+    top: 17px;
+  }
+}
+
+.register-options {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 1rem;
+}

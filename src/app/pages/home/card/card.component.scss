@@ -1,0 +1,35 @@
+.mat-divider.mat-divider-inset {
+  margin-left: 0;
+}
+
+.mat-mdc-card-content > :last-child:not(.mat-mdc-card-footer) {
+  margin-bottom: 1rem;
+}
+
+mat-card-title {
+  color: var(--grey-color);
+  font-size: 1rem;
+}
+
+.icon-avatar {
+  font-size: 2.7rem;
+}
+
+h1 {
+  margin: 0 0.3rem 1rem;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.positive {
+  color: var(--accent-color);
+}
+
+.negative {
+  color: var(--error-color);
+}
+
+.warning {
+  color: var(--warning-color);
+}

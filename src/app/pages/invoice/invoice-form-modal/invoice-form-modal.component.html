@@ -1,0 +1,81 @@
+<h1 mat-dialog-title>{{ config.modal.title }}</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Valor</mat-label>
+      <input
+        matInput
+        formControlName="value"
+        type="text"
+        mask="separator.2"
+        thousandSeparator="."
+        prefix="R$ "
+        autocomplete="name"
+        required="true"
+      />
+      <mat-error>Valor é obrigário</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Empresa</mat-label>
+      <input
+        matInput
+        formControlName="companyString"
+        type="text"
+        [readonly]="true"
+        (click)="companyQuery()"
+        required="true"
+      />
+      <button mat-icon-button matSuffix (click)="companyQuery()">
+        <mat-icon>search</mat-icon>
+      </button>
+      <mat-error>Empresa é obrigário</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descrição</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        type="text"
+        autocomplete="name"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field class="tiny-field">
+      <mat-label>Mês de refência</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="referenceMonth"
+        mask="M0/0000"
+      />
+      <mat-hint>MM/AAAA</mat-hint>
+      <mat-error>Mês de refência é obrigário</mat-error>
+    </mat-form-field>
+    <mat-form-field class="tiny-field">
+      <mat-label>Data de recebimento</mat-label>
+      <input
+        matInput
+        type="text"
+        mask="d0/M0/0000"
+        formControlName="receivedDate"
+      />
+      <mat-hint>DD/MM/AAAA</mat-hint>
+      <mat-error>Data de recebimento é obrigária</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+  <button mat-button type="button" [mat-dialog-close]="null">Cancelar</button>
+  <button
+    mat-raised-button
+    type="button"
+    class="action-btn"
+    (click)="submit()"
+    [disabled]="form.invalid"
+  >
+    {{ config.modal.action }}
+  </button>
+</div>

@@ -1,0 +1,27 @@
+<button
+  mat-icon-button
+  type="button"
+  [matMenuTriggerFor]="appSettings"
+  class="btn-mobile"
+>
+  <mat-icon>settings</mat-icon>
+</button>
+
+<button
+  mat-flat-button
+  type="button"
+  [matMenuTriggerFor]="appSettings"
+  class="btn-tablet btn-settings"
+>
+  <mat-icon>settings</mat-icon>
+  <span>Configurações</span>
+</button>
+
+<mat-menu #appSettings="matMenu">
+  @for (item of settings; track item.label) {
+    <button mat-menu-item (click)="item.action()">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </button>
+  }
+</mat-menu>

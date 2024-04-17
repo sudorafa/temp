@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 1024px) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  app-card {
+    @media (min-width: 768px) {
+      width: calc((100% - 1rem) / 2);
+    }
+    @media (min-width: 1024px) {
+      width: 100%;
+    }
+  }
+}

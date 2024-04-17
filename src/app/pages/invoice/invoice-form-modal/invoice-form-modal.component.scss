@@ -1,0 +1,16 @@
+@import "../../category/category-form-modal/category-form-modal.component";
+
+@media (min-width: 768px) {
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  mat-form-field {
+    width: 100%;
+
+    &.tiny-field {
+      width: 48%;
+    }
+  }
+}

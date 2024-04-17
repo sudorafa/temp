@@ -1,0 +1,102 @@
+<h1 mat-dialog-title>{{ config.modal.title }}</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" formControlName="name" required="true" />
+      <mat-error>Nome é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="tiny-field">
+      <mat-label>Valor</mat-label>
+      <input
+        matInput
+        formControlName="value"
+        type="text"
+        mask="separator.2"
+        thousandSeparator="."
+        prefix="R$ "
+        autocomplete="name"
+        required="true"
+      />
+      <mat-error>Valor é obrigário</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="tiny-field">
+      <mat-label>Categoria</mat-label>
+      <input
+        matInput
+        formControlName="categoryString"
+        type="text"
+        [readonly]="true"
+        (click)="categoryQuery()"
+        required="true"
+      />
+      <button mat-icon-button matSuffix (click)="categoryQuery()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Empresa</mat-label>
+      <input
+        matInput
+        formControlName="companyString"
+        type="text"
+        [readonly]="true"
+        (click)="companyQuery()"
+      />
+      <button mat-icon-button matSuffix (click)="companyQuery()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descrição</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        type="text"
+        autocomplete="name"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="tiny-field">
+      <mat-label>Data de pagamento</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="paymentDate"
+        mask="d0/M0/0000"
+      />
+      <mat-hint>DD/MM/AAAA</mat-hint>
+      <mat-error>Data de pagamento é obrigário</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="tiny-field">
+      <mat-label>Data de pagamento é referência</mat-label>
+      <input
+        matInput
+        type="text"
+        mask="d0/M0/0000"
+        formControlName="referenceDate"
+      />
+      <mat-hint>DD/MM/AAAA</mat-hint>
+      <mat-error>Data de referência é obrigária</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+  <button mat-button type="button" [mat-dialog-close]="null">Cancelar</button>
+  <button
+    mat-raised-button
+    type="button"
+    class="action-btn"
+    (click)="submit()"
+    [disabled]="form.invalid"
+  >
+    {{ config.modal.action }}
+  </button>
+</div>

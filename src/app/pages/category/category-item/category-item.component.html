@@ -1,0 +1,18 @@
+<div class="display">
+  <h2>{{ category().name }}</h2>
+  <p>{{ category().description }}</p>
+</div>
+@if (showAction()) {
+  <div class="actions">
+    <button mat-icon-button class="action-btn edit-btn" (click)="edit.emit()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="action-btn archive-btn"
+      (click)="archive.emit()"
+    >
+      <mat-icon>archive</mat-icon>
+    </button>
+  </div>
+}

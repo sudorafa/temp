@@ -1,0 +1,49 @@
+<h1 mat-dialog-title>{{ config.modal.title }}</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Nome fantasia</mat-label>
+      <input
+        matInput
+        formControlName="name"
+        type="text"
+        autocomplete="name"
+        required="true"
+      />
+      <mat-error>Nome fantasia é obrigário</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Razão social</mat-label>
+      <input
+        matInput
+        formControlName="corporateName"
+        type="text"
+        autocomplete="name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>CNPJ</mat-label>
+      <input
+        matInput
+        formControlName="cnpj"
+        type="text"
+        autocomplete="off"
+        mask="00.000.000/0000-00"
+      />
+    </mat-form-field>
+  </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+  <button mat-button type="button" [mat-dialog-close]="null">Cancelar</button>
+  <button
+    mat-raised-button
+    type="button"
+    class="action-btn"
+    (click)="submit()"
+    [disabled]="form.invalid"
+  >
+    {{ config.modal.action }}
+  </button>
+</div>

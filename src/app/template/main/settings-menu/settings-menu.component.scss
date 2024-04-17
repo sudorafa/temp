@@ -1,0 +1,23 @@
+.btn-tablet {
+  display: none;
+}
+
+button.btn-settings {
+  color: var(--grey-color);
+}
+
+@media (min-width: 768px) {
+  .btn-mobile {
+    display: none;
+  }
+
+  .btn-tablet {
+    display: initial;
+  }
+
+  .mdc-button {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--grey-color);
+  }
+}

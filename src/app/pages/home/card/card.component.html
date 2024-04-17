@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-icon mat-card-avatar class="icon-avatar" [class]="appearance()">
+      {{ icon() }}
+    </mat-icon>
+    <mat-card-title>{{ title() }}</mat-card-title>
+    <mat-card-subtitle>{{ displayDate() }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <h1 [class]="appearance()">
+      {{ value() }}
+    </h1>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+  </mat-card-footer>
+</mat-card>

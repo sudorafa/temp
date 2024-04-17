@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+  padding: 1rem;
+  color: var(--dark-color);
+}
+
+.icon-avatar {
+  font-size: 2.7rem;
+  border-radius: unset;
+  margin: 0;
+  color: var(--grey-color);
+}
+
+mat-card-header {
+  align-items: center;
+}
+
+.mat-divider {
+  margin: 1rem 0;
+
+  @media (min-width: 768px) {
+    margin: 1rem 0;
+  }
+}
+
+mat-card-title {
+  font-size: 1.1rem;
+
+  @media (min-width: 768px) {
+    font-size: initial;
+  }
+}

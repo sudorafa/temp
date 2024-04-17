@@ -1,0 +1,109 @@
+<form [formGroup]="form" (ngSubmit)="registerHandle()">
+  <img src="assets/images/logo.png" />
+
+  <p>
+    Você está a poucos passos de organizar suas NFs e despesas, por favor
+    preencha os dados abaixo:
+  </p>
+
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input
+      matInput
+      formControlName="name"
+      type="text"
+      autocomplete="name"
+      required="true"
+    />
+    <mat-error>Seu nome é obrigário</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Razão Social</mat-label>
+    <input
+      matInput
+      formControlName="company"
+      type="text"
+      autocomplete="organization"
+      required="true"
+    />
+    <mat-error>Razão social é obrigária</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>CNPJ</mat-label>
+    <input
+      matInput
+      formControlName="cnpj"
+      type="text"
+      autocomplete="organization"
+      required="true"
+      mask="00.000.000/0000-00"
+    />
+    <mat-error>Razão social é obrigária</mat-error>
+    @if (errors().cnpj) {
+      <mat-error>CNPJ já cadastrado, por favor tente outro</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Telefone / Celular</mat-label>
+    <input
+      matInput
+      formControlName="phone"
+      type="tel"
+      autocomplete="tel"
+      required="true"
+      mask="(00) 0000-0000||(00) 0 0000-0000"
+    />
+    <mat-error>Telefone é obrigária</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>E-mail</mat-label>
+    <input
+      matInput
+      formControlName="email"
+      type="email"
+      autocomplete="email"
+      required="true"
+    />
+    <mat-error>E-mail é obrigário</mat-error>
+    @if (errors().cnpj) {
+      <mat-error>E-mail já cadastrado, por favor tente outro</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Senha</mat-label>
+    <input
+      matInput
+      formControlName="password"
+      type="password"
+      autocomplete="current-password"
+      required="true"
+    />
+    <mat-error>Senha é obrigária</mat-error>
+  </mat-form-field>
+
+  @if (loadingRegister()) {
+    <mat-spinner [diameter]="45"></mat-spinner>
+  } @else {
+    <button
+      mat-raised-button
+      type="submit"
+      class="btn__register"
+      [disabled]="form.invalid"
+    >
+      Cadastrar
+    </button>
+  }
+  <button
+    mat-stroked-button
+    type="button"
+    class="btn__back"
+    [routerLink]="['/login']"
+  >
+    Voltar para login
+  </button>
+</form>

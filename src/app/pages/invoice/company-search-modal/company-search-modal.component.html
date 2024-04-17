@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Selecione uma empresa</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Filtrar empresa</mat-label>
+    <input matInput [formControl]="search" type="text" autocomplete="off" />
+    <mat-hint>Filtre por nome ou CNPJ</mat-hint>
+  </mat-form-field>
+  @for (company of companiesFiltered(); track $index) {
+    <app-company-item
+      [showAction]="false"
+      [company]="company"
+      (click)="selectCompany(company)"
+    ></app-company-item>
+  } @empty {
+    <div class="no-result">
+      <p>Nenhuma empresa encontrada</p>
+    </div>
+  }
+</div>

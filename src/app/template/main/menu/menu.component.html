@@ -1,0 +1,27 @@
+<button mat-icon-button [matMenuTriggerFor]="appMenu" class="menu-mobile">
+  <mat-icon>menu</mat-icon>
+</button>
+<mat-menu #appMenu="matMenu">
+  @for (item of menu; track item.label) {
+    <a
+      mat-menu-item
+      routerLinkActive="menu--activated"
+      [routerLink]="item.path"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </a>
+  }
+</mat-menu>
+<nav>
+  @for (item of menu; track item.label) {
+    <a
+      mat-flat-button
+      routerLinkActive="menu--activated"
+      [routerLink]="item.path"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </a>
+  }
+</nav>

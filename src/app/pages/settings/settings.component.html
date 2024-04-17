@@ -1,0 +1,27 @@
+<mat-slide-toggle
+  [checked]="settings().smsNotification"
+  (change)="update({ smsNotification: $event.checked })"
+>
+  Notificação por SMS
+</mat-slide-toggle>
+<mat-slide-toggle
+  [checked]="settings().emailNotification"
+  (change)="update({ emailNotification: $event.checked })"
+>
+  Notificação por e-mail
+</mat-slide-toggle>
+<mat-form-field class="control__billing-ceil">
+  <mat-label>Teto de faturamento anual</mat-label>
+  <input
+    matInput
+    required
+    type="text"
+    autocomplete="off"
+    mask="separator.2"
+    thousandSeparator="."
+    prefix="R$ "
+    [formControl]="billingCeil"
+    (change)="update({ billingCeil: billingCeil.value })"
+  />
+  <mat-error>Esse campo é obrigatório</mat-error>
+</mat-form-field>

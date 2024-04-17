@@ -1,0 +1,32 @@
+@import "../../invoice/invoice-item/invoice-item.component";
+
+.display {
+  width: 100%;
+  gap: 0.4rem;
+}
+
+.item-row {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  flex-direction: column;
+}
+
+.item-top {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .item-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .actions {
+    position: relative;
+    right: -20px;
+  }
+}

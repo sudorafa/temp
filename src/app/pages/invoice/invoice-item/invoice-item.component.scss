@@ -1,0 +1,72 @@
+@import "../../category/category-item/category-item.component";
+
+.display-value {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.mat-mdc-icon-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.actions {
+  justify-content: flex-end;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.description {
+  display: none;
+}
+
+.date-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  p {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.display {
+  gap: 5px;
+}
+
+@media (min-width: 768px) {
+  .description {
+    display: initial;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 1.3rem 0 0;
+  }
+
+  .display-value {
+    position: relative;
+    align-self: flex-start;
+  }
+
+  .actions {
+    justify-content: flex-end;
+    transform: scale(0.7);
+    position: absolute;
+    right: -20px;
+    top: -10px;
+  }
+
+  .date-box p {
+    flex-direction: row;
+    gap: 5px;
+  }
+}

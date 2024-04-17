@@ -1,0 +1,27 @@
+@if (invoices().length > 0) {
+  <button
+    mat-raised-button
+    class="create-btn create-list-btn"
+    (click)="create()"
+  >
+    Adicionar Nota Fiscal
+  </button>
+}
+<div class="list">
+  @for (invoice of invoices(); track $index) {
+    <app-invoice-item
+      [invoice]="invoice"
+      (edit)="edit(invoice)"
+      (remove)="remove(invoice)"
+    ></app-invoice-item>
+  } @empty {
+    <div class="no-result">
+      <mat-icon class="title-icon">sentiment_dissatisfied</mat-icon>
+      <div class="no-result-title">Nenhuma nota fiscal cadastrada</div>
+      <div class="no-result-description">Aproveite para criar uma</div>
+      <button mat-raised-button class="create-btn" (click)="create()">
+        Adicionar Nota Fiscal
+      </button>
+    </div>
+  }
+</div>

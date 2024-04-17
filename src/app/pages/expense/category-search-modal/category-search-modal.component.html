@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Selecione uma categoria</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Filtrar categoria</mat-label>
+    <input matInput [formControl]="search" type="text" autocomplete="off" />
+    <mat-hint>Filtre por nome</mat-hint>
+  </mat-form-field>
+  @for (category of categoriesFiltered(); track $index) {
+    <app-category-item
+      [showAction]="false"
+      [category]="category"
+      (click)="selectCategory(category)"
+    ></app-category-item>
+  } @empty {
+    <div class="no-result">
+      <p>Nenhuma categoria encontrada</p>
+    </div>
+  }
+</div>

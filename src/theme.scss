@@ -1,0 +1,82 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$vibbra-primary: (
+  50: var(--secondary-color),
+  100: var(--secondary-color),
+  200: var(--secondary-color),
+  300: var(--primary-color),
+  400: var(--primary-color),
+  500: var(--primary-color),
+  600: var(--primary-color),
+  700: var(--primary-color),
+  800: var(--primary-color),
+  900: var(--primary-color),
+  A100: var(--primary-color),
+  A200: var(--primary-color),
+  A400: var(--primary-color),
+  A700: var(--primary-color),
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87),
+  ),
+);
+
+$vibbra-secondary: (
+  50: var(--accent-color),
+  100: var(--accent-color),
+  200: var(--accent-color),
+  300: var(--accent-color),
+  400: var(--accent-color),
+  500: var(--accent-color),
+  600: var(--accent-color),
+  700: var(--accent-color),
+  800: var(--accent-color),
+  900: var(--accent-color),
+  A100: var(--accent-color),
+  A200: var(--accent-color),
+  A400: var(--accent-color),
+  A700: var(--accent-color),
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87),
+  ),
+);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette($vibbra-primary),
+      accent: mat.define-palette($vibbra-secondary),
+      warn: mat.define-palette(mat.$red-palette),
+    ),
+    typography: mat.define-typography-config(),
+  )
+);
+
+@include mat.all-component-themes($theme);

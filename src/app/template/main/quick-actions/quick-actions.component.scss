@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: fixed;
+  bottom: 50px;
+  right: 0.7rem;
+  border: 1px solid var(--grey-color);
+  padding: 5px;
+  border-radius: 27px;
+  background: var(--light-color);
+  box-shadow: 2px 2px 5px #00000063;
+}
+
+.btn-add-invoice {
+  background-color: var(--accent-color);
+  color: var(--light-color);
+}
+
+.btn-add-expense {
+  background-color: var(--error-color);
+  color: var(--light-color);
+}

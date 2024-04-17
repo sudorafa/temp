@@ -1,0 +1,31 @@
+<app-card
+  appearance="positive"
+  title="NF - Emitidas"
+  icon="paid"
+  [displayDate]="today()"
+  [value]="invoices().current"
+></app-card>
+
+<app-card
+  [appearance]="invoices().status"
+  title="Valor disponível"
+  icon="currency_exchange"
+  [displayDate]="today()"
+  [value]="invoices().available"
+></app-card>
+
+<app-card
+  appearance="negative"
+  title="Total Despesas"
+  icon="paid"
+  [displayDate]="today()"
+  [value]="expenses()"
+></app-card>
+
+<app-card
+  [appearance]="invoices().current - expenses() < 0 ? 'negative' : 'positive'"
+  title="Balanço do mês"
+  icon="currency_exchange"
+  [displayDate]="today()"
+  [value]="invoices().current - expenses()"
+></app-card>

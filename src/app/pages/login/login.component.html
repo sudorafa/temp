@@ -1,0 +1,75 @@
+<form [formGroup]="form" (ngSubmit)="emailLoginHandle()">
+  <img src="assets/images/logo.png" />
+
+  <mat-form-field>
+    <mat-label>E-mail</mat-label>
+    <mat-icon matPrefix>mail</mat-icon>
+    <input
+      matInput
+      formControlName="email"
+      type="email"
+      autocomplete="email"
+      required="true"
+    />
+    <mat-error>E-mail é obrigário</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Senha</mat-label>
+    <mat-icon matPrefix>key</mat-icon>
+    <input
+      matInput
+      formControlName="password"
+      type="password"
+      autocomplete="current-password"
+      required="true"
+    />
+    <mat-error>Senha é obrigária</mat-error>
+  </mat-form-field>
+
+  @if (loginError() === true) {
+    <mat-error>E-mail ou senha não conferem!</mat-error>
+  }
+
+  @if (loadingLogin()) {
+    <mat-spinner [diameter]="45"></mat-spinner>
+  } @else {
+    <button
+      mat-raised-button
+      type="submit"
+      class="btn__login"
+      [disabled]="form.invalid"
+    >
+      <mat-icon>login</mat-icon>
+      Entrar
+    </button>
+  }
+
+  <h2 class="has-register-title">Ainda não tem cadastro?</h2>
+  <h1 class="register-title">Cadastrar com</h1>
+  <section class="register-options">
+    <button
+      mat-stroked-button
+      type="button"
+      class="btn__email"
+      [routerLink]="['/register']"
+    >
+      E-mail
+    </button>
+    <button
+      mat-stroked-button
+      type="button"
+      class="btn__facebook"
+      (click)="facebookLoginHandle()"
+    >
+      Facebook
+    </button>
+    <button
+      mat-stroked-button
+      type="button"
+      class="btn__google"
+      (click)="googleLoginHandle()"
+    >
+      Google
+    </button>
+  </section>
+</form>

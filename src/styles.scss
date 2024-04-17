@@ -1,0 +1,31 @@
+@use "@angular/material" as mat;
+@import "./theme.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --primary-color: #0077ff;
+  --secondary-color: #01a2e8;
+  --grey-color: #555555;
+  --dark-color: #070707;
+  --accent-color: #85bb30;
+  --light-color: #fff;
+  --error-color: #bf0202;
+  --warning-color: #dec000;
+}
+
+.mat-mdc-menu-item,
+button.mat-mdc-menu-item,
+.mat-mdc-menu-item:visited,
+.mat-mdc-menu-item:link {
+  .mat-icon {
+    color: var(--grey-color);
+  }
+}

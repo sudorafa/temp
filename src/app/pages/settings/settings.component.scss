@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.control {
+  &__billing-ceil {
+    max-width: 200px;
+  }
+}
+
+.mat-divider {
+  margin: 0 -2rem;
+}

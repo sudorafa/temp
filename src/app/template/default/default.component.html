@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <mat-icon mat-card-avatar class="icon-avatar">
+      {{ page().icon }}
+    </mat-icon>
+    <mat-card-title>{{ page().title }}</mat-card-title>
+    <mat-card-subtitle>{{ page().subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>

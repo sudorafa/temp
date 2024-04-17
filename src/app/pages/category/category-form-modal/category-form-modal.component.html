@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>{{ config.modal.title }}</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Nome da categoria</mat-label>
+      <input
+        matInput
+        formControlName="name"
+        type="text"
+        autocomplete="name"
+        required="true"
+      />
+      <mat-error>Nome é obrigário</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Descrição</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        type="text"
+        autocomplete="name"
+      ></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+  <button mat-button type="button" [mat-dialog-close]="null">Cancelar</button>
+  <button
+    mat-raised-button
+    type="button"
+    class="action-btn"
+    (click)="submit()"
+    [disabled]="form.invalid"
+  >
+    {{ config.modal.action }}
+  </button>
+</div>

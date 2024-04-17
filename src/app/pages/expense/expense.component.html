@@ -1,0 +1,27 @@
+@if (expenses().length > 0) {
+  <button
+    mat-raised-button
+    class="create-btn create-list-btn"
+    (click)="create()"
+  >
+    Adicionar Despesa
+  </button>
+}
+<div class="list">
+  @for (expense of expenses(); track $index) {
+    <app-expense-item
+      [expense]="expense"
+      (edit)="edit(expense)"
+      (remove)="remove(expense)"
+    ></app-expense-item>
+  } @empty {
+    <div class="no-result">
+      <mat-icon class="title-icon">sentiment_satisfied</mat-icon>
+      <div class="no-result-title">Nenhuma despesa cadastrada</div>
+      <div class="no-result-description">Gostaria de cadastrar uma?</div>
+      <button mat-raised-button class="create-btn" (click)="create()">
+        Adicionar Despesa
+      </button>
+    </div>
+  }
+</div>

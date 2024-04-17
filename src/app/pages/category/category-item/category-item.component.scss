@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 0.7rem 1rem 0.5rem;
+  box-shadow: 0px 0px 5px #ddd;
+  align-items: center;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  color: var(--grey-color);
+
+  h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.8;
+  }
+}
+
+.actions {
+  display: flex;
+}
+
+.action-btn {
+  font-size: 1rem;
+}
+
+.edit-btn {
+  color: var(--primary-color);
+}
+
+.archive-btn {
+  color: var(--error-color);
+}
+
+@media (min-width: 768px) {
+  :host {
+    width: 300px;
+  }
+}

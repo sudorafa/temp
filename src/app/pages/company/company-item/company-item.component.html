@@ -1,0 +1,12 @@
+<div class="display">
+  <h2>{{ company().name }}</h2>
+  <h3>{{ company().formattedCnpj }}</h3>
+  <p>{{ company().corporateName }}</p>
+</div>
+@if (showAction()) {
+  <div class="actions">
+    <button mat-icon-button class="action-btn edit-btn" (click)="edit.emit()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+}

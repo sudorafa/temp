@@ -1,0 +1,10 @@
+<app-home-top
+  [expenses]="dashboard().expenses"
+  [invoices]="dashboard().invoices"
+  [today]="today()"
+></app-home-top>
+<app-home-charts
+  [dashboard]="dashboard()"
+  [years]="years"
+  (changeYear)="changeYear($event)"
+></app-home-charts>

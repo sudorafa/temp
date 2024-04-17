@@ -1,0 +1,31 @@
+<div class="display">
+  <p>
+    <strong>{{ invoice().company?.name }}</strong>
+  </p>
+  <p class="description">{{ invoice().description }}</p>
+  <div class="date-box">
+    <p>
+      <span>Recebimento:</span>
+      <strong>{{ invoice().receivedDate | date: "dd/MM/YYYY" }}</strong>
+    </p>
+    <p>
+      <span>Referência:</span>
+      <strong>{{ invoice().referenceMonth | date: "MM/YYYY" }}</strong>
+    </p>
+  </div>
+</div>
+<div class="display-value">
+  <div class="actions">
+    <button mat-icon-button class="action-btn edit-btn" (click)="edit.emit()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="action-btn archive-btn"
+      (click)="remove.emit()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <h2>{{ invoice().formattedValue }}</h2>
+</div>
