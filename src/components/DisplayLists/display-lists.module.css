@@ -1,0 +1,11 @@
+
+.list-item {
+  padding: var(--chakra-space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-button {
+  width: 150px;
+}

@@ -1,0 +1,20 @@
+.form__title {
+  font-size: var(--chakra-fontSizes-lg) !important;
+  color: var(--chakra-colors-gray-600);
+}
+
+.form__footer {
+  display: flex;
+  justify-content: end ;
+}
+
+.list-item {
+  padding: var(--chakra-space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-button {
+  width: 150px;
+}

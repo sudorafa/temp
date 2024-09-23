@@ -1,0 +1,44 @@
+.screen-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--chakra-space-4);
+}
+
+.card {
+  min-width: 300px;
+  width: 100%;
+  min-height: 300px;
+  height: fit-content;
+}
+
+.card__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  height: fit-content;
+}
+
+.card__icon {
+  background-color: var(--chakra-colors-blue-600);
+  padding: var(--chakra-space-4);
+  margin-bottom: var(--chakra-space-4);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__footer {
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .screen-grid {
+    flex-direction: row;
+  }
+}

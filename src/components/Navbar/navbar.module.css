@@ -1,0 +1,17 @@
+:root {
+  --navbar-height: 75px;
+}
+
+.navbar {
+  min-height: var(--navbar-height);
+  box-shadow: var(--chakra-shadows-base);
+  display: flex;
+  align-items: center;
+  padding: var(--chakra-space-4);
+  margin-bottom: var(--chakra-space-8);
+  background-color: #fff;
+}
+
+.navbar ul {
+  list-style: none;
+}
